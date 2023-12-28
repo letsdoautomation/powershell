@@ -1,4 +1,4 @@
-# Powershell: Change Right Click Mouse Context Menu
+# PowerShell: Change Right Click Mouse Context Menu
 
 <b>Objectives:</b>
 
