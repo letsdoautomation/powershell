@@ -33,7 +33,7 @@ $settings =
 [PSCustomObject]@{
     Path  = "SOFTWARE\Policies\Microsoft\Edge"
     Value = $apps
-    Name  = "WebAppInstallForceList" # secure, automatic or off
+    Name  = "WebAppInstallForceList"
 } | group Path
 
 foreach($setting in $settings){

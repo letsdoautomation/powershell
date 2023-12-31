@@ -33,7 +33,7 @@ $settings =
 [PSCustomObject]@{
     Path  = "SOFTWARE\Policies\Google\Chrome"
     Value = $apps
-    Name  = "WebAppInstallForceList" # secure, automatic or off
+    Name  = "WebAppInstallForceList"
 } | group Path
 
 foreach($setting in $settings){
