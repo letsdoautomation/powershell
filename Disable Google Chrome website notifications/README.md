@@ -1,6 +1,8 @@
 # PowerShell: Disable Google Chrome website notifications
 
-[bennish web-notifications](https://www.bennish.net/web-notifications.html)
+<b>Links: </b>
+
+* [bennish web-notifications](https://www.bennish.net/web-notifications.html)
 
 <b>Objective:</b>
 
