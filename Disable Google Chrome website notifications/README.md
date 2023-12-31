@@ -3,7 +3,8 @@
 [bennish web-notifications](https://www.bennish.net/web-notifications.html)
 
 <b>Objective:</b>
-    * Disable Google Chrome website notifications
+
+* Disable Google Chrome website notifications
 
 <b>Notes:</b> Works for Windows Pro and Enterprise <br />
 
