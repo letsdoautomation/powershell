@@ -1,12 +1,8 @@
-# PowerShell: Block Google Chrome access to a list of URLs
-
-<b>Documentation:</b>
-
-* [URL blocklist filter format](https://support.google.com/chrome/a/answer/9942583?visit_id=638395414883072846-3752810819&p=url_blocklist_filter_format&rd=1#zippy=%2Curl-blocklist-examples)
+# PowerShell: Block Microsoft Edge access to a list of URLs
 
 <b>Objectives:</b>
 
-* Block Google Chrome access to a list of URLs
+* Block Microsoft Edge access to a list of URLs
     * facebook
     * instagram
 
@@ -17,12 +13,12 @@
 ```powershell
 $settings = 
 [PSCustomObject]@{ # block facebook
-    Path  = "SOFTWARE\Policies\Google\Chrome\URLBlocklist"
+    Path  = "SOFTWARE\Policies\Microsoft\Edge\URLBlocklist"
     Value = "facebook.com"
     Name  = ++$count
 },
 [PSCustomObject]@{ # block instagram
-    Path  = "SOFTWARE\Policies\Google\Chrome\URLBlocklist"
+    Path  = "SOFTWARE\Policies\Microsoft\Edge\URLBlocklist"
     Value = "instagram.com"
     Name  = ++$count
 } | group Path

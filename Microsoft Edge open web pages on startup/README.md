@@ -1,8 +1,8 @@
-# PowerShell: Setup Google Chrome Startup, Home and New Tab Page
+# PowerShell: Microsoft Edge open web pages on startup
 
 <b>Objectives:</b>
 
-* Setup Google Chrome Startup, Home and New Tab Page
+* Microsoft Edge open web pages on startup
 
 <b>Notes:</b> Works for Windows Pro and Enterprise <br />
 
@@ -12,30 +12,20 @@
 
 ```powershell
 $settings = 
-[PSCustomObject]@{ 
-    Path  = "SOFTWARE\Policies\Google\Chrome"
-    Value = "https://duckduckgo.com"
-    Name  = "HomepageLocation" # set homepage
-},
 [PSCustomObject]@{
-    Path  = "SOFTWARE\Policies\Google\Chrome"
-    Value = "https://duckduckgo.com/"
-    Name  = "NewTabPageLocation" # set new page
-},
-[PSCustomObject]@{
-    Path  = "SOFTWARE\Policies\Google\Chrome"
+    Path  = "SOFTWARE\Policies\Microsoft\Edge"
     Value = 4 # 5 - Open New Tab Page, 
               # 1 - Restore the last session, 
               # 4 - Open a list of URLs
     Name  = "RestoreOnStartup"
 },
 [PSCustomObject]@{
-    Path  = "SOFTWARE\Policies\Google\Chrome\RestoreOnStartupURLs"
+    Path  = "SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs"
     Value = "https://youtube.com"
     Name  = ++$count
 },
 [PSCustomObject]@{
-    Path  = "SOFTWARE\Policies\Google\Chrome\RestoreOnStartupURLs"
+    Path  = "SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs"
     Value = "https://google.com"
     Name  = ++$count
 } | group Path
