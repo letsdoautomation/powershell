@@ -1,8 +1,8 @@
-# PowerShell: Configure Google Chrome DNS over HTTPS
+# PowerShell: Google Chrome disable DNS over HTTPS
 
 <b>Objectives:</b>
 
-* Configure Google Chrome DNS over HTTPS
+* Google Chrome disable DNS over HTTPS
 
 <b>PowerShell snippet:</b>
 
