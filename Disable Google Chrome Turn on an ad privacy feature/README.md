@@ -15,22 +15,22 @@
 $settings = 
 [PSCustomObject]@{
     Path  = "SOFTWARE\Policies\Google\Chrome"
-    Value = 0 # 0 disable, 1 enable
+    Value = 0
     Name  = "PrivacySandboxPromptEnabled" # notification
 },
 [PSCustomObject]@{ 
     Path  = "SOFTWARE\Policies\Google\Chrome"
-    Value = 0 # 0 disable, 1 enable
+    Value = 0
     Name  = "PrivacySandboxAdMeasurementEnabled"
 },
 [PSCustomObject]@{ 
     Path  = "SOFTWARE\Policies\Google\Chrome"
-    Value = 0 # 0 disable, 1 enable
+    Value = 0
     Name  = "PrivacySandboxAdTopicsEnabled"
 },
 [PSCustomObject]@{ 
     Path  = "SOFTWARE\Policies\Google\Chrome"
-    Value = 0 # 0 disable, 1 enable
+    Value = 0
     Name  = "PrivacySandboxSiteEnabledAdsEnabled"
 } | group Path
 
