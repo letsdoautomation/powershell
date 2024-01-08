@@ -8,8 +8,6 @@
 
 * Disable Google Chrome website notifications
 
-<b>Notes:</b> Works for Windows Pro and Enterprise <br />
-
 <b>PowerShell snippet:</b>
 
 ```powershell
