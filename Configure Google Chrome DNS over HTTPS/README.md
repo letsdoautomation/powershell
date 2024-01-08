@@ -13,8 +13,8 @@
 $settings = 
 [PSCustomObject]@{
     Path  = "SOFTWARE\Policies\Google\Chrome"
-    Value = "secure"
-    Name  = "DnsOverHttpsMode" # secure, automatic or off
+    Value = "secure" # secure, automatic or off
+    Name  = "DnsOverHttpsMode" 
 } | group Path
 
 foreach($setting in $settings){
