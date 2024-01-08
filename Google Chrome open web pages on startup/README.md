@@ -4,7 +4,7 @@
 
 * Google Chrome open web pages on startup
 
-<b>Notes:</b> Works for Windows Pro and Enterprise <br />
+<b>Notes:</b> <br />
 
 <img src="img/note.png" width=40% height=40%>
 
