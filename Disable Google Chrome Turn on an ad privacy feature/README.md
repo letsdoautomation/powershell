@@ -9,8 +9,6 @@
 
 <img src="img/privacysandbox.png" width=40% height=40%>
 
-<b>Notes:</b> Works for Windows Pro and Enterprise <br />
-
 <b>PowerShell snippet:</b>
 
 ```powershell
