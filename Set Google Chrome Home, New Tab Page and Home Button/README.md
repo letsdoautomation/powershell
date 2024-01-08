@@ -4,7 +4,7 @@
 
 * Set Google Chrome Home, New Tab Page and Home Button
 
-<b>Notes:</b> Works for Windows Pro and Enterprise <br />
+<b>Notes:</b> <br />
 
 <img src="img/note.png" width=40% height=40%>
 
