@@ -4,8 +4,6 @@
 
 * Configure Microsoft Edge Start page quick links
 
-<b>Notes:</b> Works for Windows Pro and Enterprise <br />
-
 <b>PowerShell snippet:</b>
 
 ```powershell
