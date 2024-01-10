@@ -4,8 +4,6 @@
 
 * Microsoft Edge show the Downloads button on the toolbar
 
-<b>Notes:</b> Works for Windows Pro and Enterprise <br />
-
 <b>PowerShell snippet:</b>
 
 ```powershell
