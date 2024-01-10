@@ -4,8 +4,6 @@
 
 * Disable Microsoft Edge split screen
 
-<b>Notes:</b> Works for Windows Pro and Enterprise <br />
-
 <b>PowerShell snippet:</b>
 
 ```powershell
