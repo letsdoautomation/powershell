@@ -4,8 +4,6 @@
 
 * Manage Microsoft Edge Search Engines
 
-<b>Notes:</b> Works for Windows Pro and Enterprise <br />
-
 <b>PowerShell snippet:</b>
 
 ```powershell
