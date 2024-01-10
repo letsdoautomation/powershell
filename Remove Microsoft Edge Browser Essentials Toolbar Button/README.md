@@ -4,8 +4,6 @@
 
 * Remove Microsoft Edge Browser Essentials Toolbar Button
 
-<b>Notes:</b> Works for Windows Pro and Enterprise <br />
-
 <b>PowerShell snippet:</b>
 
 ```powershell
