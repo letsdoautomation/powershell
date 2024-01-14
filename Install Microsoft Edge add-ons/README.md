@@ -12,12 +12,17 @@
 $settings = 
 [PSCustomObject]@{
     Path  = "SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist"
-    Value = "elhekieabhbkpmcefcoobjddigjcaadp"
+    Value = "elhekieabhbkpmcefcoobjddigjcaadp" # Adobe Acrobat
     Name  = ++$count
 },
 [PSCustomObject]@{
     Path  = "SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist"
-    Value = "cnlefmmeadmemmdciolhbnfeacpdfbkd"
+    Value = "cnlefmmeadmemmdciolhbnfeacpdfbkd" # Grammarly
+    Name  = ++$count
+},
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist"
+    Value = "odfafepnkmbhccpbejgmiehpchacaeak" # uBlock Origin
     Name  = ++$count
 } | group Path
 
