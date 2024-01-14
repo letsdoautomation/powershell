@@ -8,6 +8,8 @@
 
 * [Microsoft Edge Extensions](https://microsoftedge.microsoft.com/addons/Get-started-with-microsoft-edge-extensions)
 
+<b>PowerShell snippet:</b>
+
 ```powershell
 $settings = 
 [PSCustomObject]@{
