@@ -22,7 +22,7 @@ $settings =
     Value = "google.com"
     Name  = ++$count
 },
-[PSCustomObject]@{ # allow google.com
+[PSCustomObject]@{ # allow duckduckgo.com
     Path  = "SOFTWARE\Policies\Microsoft\Edge\URLAllowlist"
     Value = "duckduckgo.com"
     Name  = ++$count
