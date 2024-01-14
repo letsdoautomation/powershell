@@ -8,8 +8,6 @@
     * Allow youtube.com
     * Allow duckduckgo.com
 
-<b>Notes:</b> Works for Windows Pro and Enterprise
-
 <b>PowerShell snippet:</b>
 
 ```powershell
