@@ -1,8 +1,8 @@
-# PowerShell: Configure Brave Browser DNS over HTTPS
+# PowerShell: Disable Brave Browser DNS over HTTPS
 
 <b>Objectives:</b>
 
-* Configure Brave Browser DNS over HTTPS
+* Disable Brave Browser DNS over HTTPS
 
 <b>PowerShell snippet:</b>
 
@@ -13,8 +13,8 @@
 $settings = 
 [PSCustomObject]@{
     Path  = "SOFTWARE\Policies\BraveSoftware\Brave"
-    Value = "secure"
-    Name  = "DnsOverHttpsMode" # secure, automatic or off
+    Value = "off" # secure, automatic or off
+    Name  = "DnsOverHttpsMode" 
 } | group Path
 
 foreach($setting in $settings){
