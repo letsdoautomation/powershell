@@ -1,8 +1,8 @@
-# PowerShell: Firefox customize Home page
+# PowerShell: Firefox disable quick links in Home page
 
 <b>Objective:</b>
 
-* Firefox customize Home page
+* Firefox disable quick links in Home page
 
 <b>PowerShell snippet:</b>
 
