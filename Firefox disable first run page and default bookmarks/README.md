@@ -1,16 +1,21 @@
-# PowerShell: Firefox disable first run page
+# PowerShell: Firefox disable first run page and default bookmarks
 
 <b>Objective:</b>
 
-* Firefox disable first run page
+* Firefox disable first run page and default bookmarks
 
 <b>PowerShell snippet:</b>
 
 ```powershell
-$settings = 
+$settings =
 [PSCustomObject]@{
     Path  = "SOFTWARE\Policies\Mozilla\Firefox"
-    Value = "https://github.com/letsdoautomation" # to disable leave it empty
+    Value = 1
+    Name  = "NoDefaultBookmarks"
+},
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Policies\Mozilla\Firefox"
+    Value = "" 
     Name  = "OverrideFirstRunPage"
 } | group Path
 
