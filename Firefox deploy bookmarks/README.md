@@ -6,8 +6,8 @@
     * youtube.com
     * google.com
     * social media
-        * twitter
-        * facebook
+        * twitter.com
+        * facebook.com
 
 <b>PowerShell snippet:</b>
 
