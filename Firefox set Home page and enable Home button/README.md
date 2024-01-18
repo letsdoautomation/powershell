@@ -1,8 +1,8 @@
-# PowerShell: Firefox set Start, Home page and enable Home button
+# PowerShell: Firefox set Home page and enable Home button
 
 <b>Objective:</b>
 
-* Firefox set Start, Home page and enable Home button
+* Firefox set Home page and enable Home button
 
 <b>PowerShell snippet:</b>
 
