@@ -15,7 +15,7 @@ $settings =
 },
 [PSCustomObject]@{
     Path  = "SOFTWARE\Policies\Mozilla\Firefox\Homepage"
-    Value = "https://github.com/letsdoautomation" # homepage
+    Value = "https://google.com" # homepage
     Name  = "URL"
 },
 [PSCustomObject]@{
