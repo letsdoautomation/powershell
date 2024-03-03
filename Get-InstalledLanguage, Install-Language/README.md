@@ -1,5 +1,15 @@
 # PowerShell: Get-InstalledLanguage, Install-Language
 
+<b>Documentation:</b>
+
+* [Install-Language](https://learn.microsoft.com/en-us/powershell/module/languagepackmanagement/install-language?view=windowsserver2022-ps)
+* [Get-InstalledLanguage](https://learn.microsoft.com/en-us/powershell/module/languagepackmanagement/get-installedlanguage?view=windowsserver2022-ps)
+
+<b>Use powershell to:</b>
+
+* Check installed languages
+* Install French language
+
 # Show installed languages
 ```powershell
 Get-InstalledLanguage
@@ -9,7 +19,7 @@ Get-InstalledLanguage
 ```powershell
 $install_language = @{
     Language       = "fr-FR"
-    CopyToSettings = $true
+    CopyToSettings = $true # This parameter changes French language as default language for all users
 }
 Install-Language @install_language
 ```
