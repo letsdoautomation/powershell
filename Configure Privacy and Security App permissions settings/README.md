@@ -8,6 +8,8 @@
 
 * Disabling Web Cam and Microphone not recommended
 
+<b>Powershell snippet:</b>
+
 ```powershell
 $windows_settings =
 [PSCustomObject]@{ # Dont recommend
