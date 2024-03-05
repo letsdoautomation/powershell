@@ -57,7 +57,7 @@ $app_packages =
 "Microsoft.WindowsNotepad", # don't recommended removing
 "Microsoft.Paint", # don't recommended removing
 "Microsoft.WindowsCalculator", # don't recommended removing
-"Microsoft.XboxGameOverlay", # don't recommended removing
+"Microsoft.XboxGamingOverlay", # don't recommended removing
 "Microsoft.Windows.Photos",
 "Microsoft.WindowsFeedbackHub",
 "Microsoft.WindowsAlarms",
