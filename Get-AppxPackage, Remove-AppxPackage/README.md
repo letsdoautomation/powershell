@@ -54,12 +54,12 @@ Remove-AppxPackage "Microsoft.OutlookForWindows_1.2024.111.100_x64__8wekyb3d8bbw
 
 ```powershell
 $app_packages = 
-"Microsoft.WindowsNotepad",
-"Microsoft.Paint",
+"Microsoft.WindowsNotepad", # don't recommended removing
+"Microsoft.Paint", # don't recommended removing
+"Microsoft.WindowsCalculator", # don't recommended removing
 "Microsoft.Windows.Photos",
 "Microsoft.WindowsFeedbackHub",
 "Microsoft.WindowsAlarms",
-"Microsoft.WindowsCalculator",
 "Microsoft.WindowsMaps",
 "Clipchamp.Clipchamp",
 "Microsoft.OutlookForWindows",
