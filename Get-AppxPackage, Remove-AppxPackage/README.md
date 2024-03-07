@@ -65,6 +65,7 @@ Remove-AppxPackage "Microsoft.OutlookForWindows_1.2024.111.100_x64__8wekyb3d8bbw
 #"Microsoft.Windows.DevHome"
 #"Microsoft.GetHelp"
 #"Microsoft.Getstarted"
+#"Microsoft.WindowsStore"
 
 $app_packages = 
 "Microsoft.WindowsCamera",
@@ -89,8 +90,48 @@ $app_packages =
 "Microsoft.MicrosoftStickyNotes",
 "Microsoft.BingWeather",
 "Microsoft.Xbox.TCUI",
-"Microsoft.GamingApp",
-"SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify"
+"Microsoft.GamingApp"
 
 Get-AppxPackage -AllUsers | ?{$_.name -in $app_packages} | Remove-AppxPackage -AllUsers
+```
+
+<b>List applications that are not in the list and that are removable</b>
+
+```powershell
+$app_packages = 
+"Microsoft.WindowsCamera",
+"Clipchamp.Clipchamp",
+"Microsoft.WindowsAlarms",
+"Microsoft.549981C3F5F10", # Cortana
+"Microsoft.WindowsFeedbackHub",
+"microsoft.windowscommunicationsapps",
+"Microsoft.WindowsMaps",
+"Microsoft.ZuneMusic",
+"Microsoft.BingNews",
+"Microsoft.Todos",
+"Microsoft.ZuneVideo",
+"Microsoft.MicrosoftOfficeHub",
+"Microsoft.OutlookForWindows",
+"Microsoft.People",
+"Microsoft.PowerAutomateDesktop",
+"MicrosoftCorporationII.QuickAssist",
+"Microsoft.ScreenSketch",
+"Microsoft.MicrosoftSolitaireCollection",
+"Microsoft.WindowsSoundRecorder",
+"Microsoft.MicrosoftStickyNotes",
+"Microsoft.BingWeather",
+"Microsoft.Xbox.TCUI",
+"Microsoft.GamingApp",
+"Microsoft.YourPhone", # System component
+"Microsoft.Windows.DevHome", # System component
+"Microsoft.GetHelp", # System component
+"Microsoft.Getstarted", # System component
+"Microsoft.WindowsStore", # System component
+"Microsoft.WindowsNotepad", # Don't recommended removing
+"Microsoft.Paint", # Don't recommended removing
+"Microsoft.WindowsCalculator", # Don't recommended removing
+"Microsoft.XboxGamingOverlay", # Don't recommended removing
+"Microsoft.Windows.Photos" # Don't recommended removing
+
+Get-AppxPackage -AllUsers | ?{$_.name -notin $app_packages -and !$_.NonRemovable}
 ```
