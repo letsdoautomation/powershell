@@ -5,10 +5,6 @@
 * [Get-AppxPackage](https://learn.microsoft.com/en-us/powershell/module/appx/get-appxpackage?view=windowsserver2022-ps)
 * [Remove-AppxPackage](https://learn.microsoft.com/en-us/powershell/module/appx/remove-appxpackage?view=windowsserver2022-ps)
 
-<b>Notes:</b>
-
-   * This works only for existing users on the computer
-
 <b>Get all app packages:</b>
 
 ```powershell
@@ -95,7 +91,48 @@ $app_packages =
 Get-AppxPackage -AllUsers | ?{$_.name -in $app_packages} | Remove-AppxPackage -AllUsers
 ```
 
-<b>List applications that are not in the list and that are removable</b>
+<b>List appx packages that are not in the list</b>
+
+```powershell
+$app_packages = 
+"Microsoft.WindowsCamera",
+"Clipchamp.Clipchamp",
+"Microsoft.WindowsAlarms",
+"Microsoft.549981C3F5F10", # Cortana
+"Microsoft.WindowsFeedbackHub",
+"microsoft.windowscommunicationsapps",
+"Microsoft.WindowsMaps",
+"Microsoft.ZuneMusic",
+"Microsoft.BingNews",
+"Microsoft.Todos",
+"Microsoft.ZuneVideo",
+"Microsoft.MicrosoftOfficeHub",
+"Microsoft.OutlookForWindows",
+"Microsoft.People",
+"Microsoft.PowerAutomateDesktop",
+"MicrosoftCorporationII.QuickAssist",
+"Microsoft.ScreenSketch",
+"Microsoft.MicrosoftSolitaireCollection",
+"Microsoft.WindowsSoundRecorder",
+"Microsoft.MicrosoftStickyNotes",
+"Microsoft.BingWeather",
+"Microsoft.Xbox.TCUI",
+"Microsoft.GamingApp",
+"Microsoft.YourPhone", # System component
+"Microsoft.Windows.DevHome", # System component
+"Microsoft.GetHelp", # System component
+"Microsoft.Getstarted", # System component
+"Microsoft.WindowsStore", # System component
+"Microsoft.WindowsNotepad", # Don't recommended removing
+"Microsoft.Paint", # Don't recommended removing
+"Microsoft.WindowsCalculator", # Don't recommended removing
+"Microsoft.XboxGamingOverlay", # Don't recommended removing
+"Microsoft.Windows.Photos" # Don't recommended removing
+
+Get-AppxPackage -AllUsers | ?{$_.name -notin $app_packages -and !$_.NonRemovable} | select name
+```
+
+<b>List appx packages that are not in the list</b>
 
 ```powershell
 $app_packages = 
