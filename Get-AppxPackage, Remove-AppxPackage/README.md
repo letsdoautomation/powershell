@@ -53,40 +53,44 @@ Remove-AppxPackage "Microsoft.OutlookForWindows_1.2024.111.100_x64__8wekyb3d8bbw
 <b>Remove multiple app packages for all existing user:</b>
 
 ```powershell
+# Don't recommended removing
+#"Microsoft.WindowsNotepad"
+#"Microsoft.Paint"
+#"Microsoft.WindowsCalculator"
+#"Microsoft.XboxGamingOverlay"
+#"Microsoft.Windows.Photos"
+
+# System components
+#"Microsoft.YourPhone"
+#"Microsoft.Windows.DevHome"
+#"Microsoft.GetHelp"
+#"Microsoft.Getstarted"
+
 $app_packages = 
-"Microsoft.WindowsNotepad", # don't recommended removing
-"Microsoft.Paint", # don't recommended removing
-"Microsoft.WindowsCalculator", # don't recommended removing
-"Microsoft.XboxGamingOverlay", # don't recommended removing
-"Microsoft.Windows.Photos",
-"Microsoft.WindowsFeedbackHub",
-"Microsoft.WindowsAlarms",
-"Microsoft.WindowsMaps",
+"Microsoft.WindowsCamera",
 "Clipchamp.Clipchamp",
+"Microsoft.WindowsAlarms",
+"Microsoft.549981C3F5F10", # Cortana
+"Microsoft.WindowsFeedbackHub",
+"microsoft.windowscommunicationsapps",
+"Microsoft.WindowsMaps",
+"Microsoft.ZuneMusic",
+"Microsoft.BingNews",
+"Microsoft.Todos",
+"Microsoft.ZuneVideo",
+"Microsoft.MicrosoftOfficeHub",
 "Microsoft.OutlookForWindows",
 "Microsoft.People",
-"Microsoft.BingNews",
-"Microsoft.WindowsCamera",
-"Microsoft.BingWeather",
-"Microsoft.Todos",
-"Microsoft.MicrosoftOfficeHub",
-"Microsoft.MicrosoftStickyNotes",
 "Microsoft.PowerAutomateDesktop",
+"MicrosoftCorporationII.QuickAssist",
+"Microsoft.ScreenSketch",
 "Microsoft.MicrosoftSolitaireCollection",
 "Microsoft.WindowsSoundRecorder",
-"MicrosoftCorporationII.QuickAssist",
-"Microsoft.YourPhone",
-"Microsoft.Windows.DevHome",
-"Microsoft.ZuneMusic",
-"Microsoft.ZuneVideo",
-"Microsoft.549981C3F5F10",
-"microsoft.windowscommunicationsapps",
-"Microsoft.ScreenSketch",
+"Microsoft.MicrosoftStickyNotes",
+"Microsoft.BingWeather",
 "Microsoft.Xbox.TCUI",
 "Microsoft.GamingApp",
-"Microsoft.GetHelp",
-"Microsoft.Getstarted",
 "SpotifyAB.SpotifyMusic_zpdnekdrzrea0!Spotify"
 
-Get-AppxPackage -AllUsers | ?{$_.name -in $app_packages} | Remove-AppxPackage -AllUsers 
+Get-AppxPackage -AllUsers | ?{$_.name -in $app_packages} | Remove-AppxPackage -AllUsers
 ```
