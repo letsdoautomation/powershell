@@ -133,5 +133,5 @@ $app_packages =
 "Microsoft.XboxGamingOverlay", # Don't recommended removing
 "Microsoft.Windows.Photos" # Don't recommended removing
 
-Get-AppxPackage -AllUsers | ?{$_.name -notin $app_packages -and !$_.NonRemovable}
+Get-AppxPackage -AllUsers | ?{$_.name -notin $app_packages -and !$_.NonRemovable} | select name
 ```
