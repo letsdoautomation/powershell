@@ -140,5 +140,5 @@ Get-AppxPackage -AllUsers | ?{$_.name -notin $app_packages -and !$_.NonRemovable
 
 # Related videos
 
-[Export-StartLayout, Import-StartLayout]()
+[Export-StartLayout, Import-StartLayout]() <br />
 [Get-AppxProvisionedPackage, Remove-AppxProvisionedPackage]()

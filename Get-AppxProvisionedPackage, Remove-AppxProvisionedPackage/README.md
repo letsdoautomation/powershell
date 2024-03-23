@@ -142,5 +142,5 @@ Get-AppxProvisionedPackage -online | ?{$_.DisplayName -notin $app_packages} | se
 
 # Related videos
 
-[Get-AppxPackage, Remove-AppxPackage]()
+[Get-AppxPackage, Remove-AppxPackage]() <br />
 [Export-StartLayout, Import-StartLayout]()
