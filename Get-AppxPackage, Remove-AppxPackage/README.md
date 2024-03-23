@@ -11,7 +11,7 @@
 Get-AppxPackage -AllUsers
 ```
 
-<b>Get all removable wubdiws app packages:</b>
+<b>Get all removable windows app packages:</b>
 
 ```powershell
 Get-AppxPackage -AllUsers | ?{!$_.NonRemovable} | select Name, PackageFullName
