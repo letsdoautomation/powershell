@@ -5,12 +5,6 @@
 * [Get-AppxPackage](https://learn.microsoft.com/en-us/powershell/module/appx/get-appxpackage?view=windowsserver2022-ps)
 * [Remove-AppxPackage](https://learn.microsoft.com/en-us/powershell/module/appx/remove-appxpackage?view=windowsserver2022-ps)
 
-<b>Objectives:</b>
-
-* <b>Use powershell to:</b>
-   * List installed Windows store apps
-   * Remove Windows store apps
-
 <b>Get all app packages:</b>
 
 ```powershell
