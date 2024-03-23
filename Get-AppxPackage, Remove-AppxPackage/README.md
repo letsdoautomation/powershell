@@ -5,7 +5,13 @@
 * [Get-AppxPackage](https://learn.microsoft.com/en-us/powershell/module/appx/get-appxpackage?view=windowsserver2022-ps)
 * [Remove-AppxPackage](https://learn.microsoft.com/en-us/powershell/module/appx/remove-appxpackage?view=windowsserver2022-ps)
 
-<b>Get all app packages:</b>
+<b>Get all windows app packages:</b>
+
+```powershell
+Get-AppxPackage -AllUsers
+```
+
+<b>Get all removable wubdiws app packages:</b>
 
 ```powershell
 Get-AppxPackage -AllUsers | ?{!$_.NonRemovable} | select Name, PackageFullName
