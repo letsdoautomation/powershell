@@ -8,7 +8,7 @@
 <b>Objectives:</b>
 
 * <b>Use powershell to:</b>
-   * Find installed Windows store apps
+   * List installed Windows store apps
    * Remove Windows store apps for existing users only(not relly.. it kinda works for new users also)
 
 <b>Get all app packages:</b>
