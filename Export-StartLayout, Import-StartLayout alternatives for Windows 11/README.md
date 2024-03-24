@@ -88,6 +88,10 @@ Get-AppxPackage | select @{n='name';e={"$($_.PackageFamilyName)!app"}} | ?{$_.na
 
 ## Method 2
 
+<b>start2.bin file location:</b>
+
+* %LOCALAPPDATA%\Packages\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\LocalState\
+
 <b>Deploy start2.bin file from current user to all other users on the computer:</b>
 
 ```powershell
@@ -104,11 +108,6 @@ ls "C:\Users\" -Attributes Directory -Force | ?{$_.FullName -notin $env:USERPROF
     $start_layout.CopyTo("$($destination)\start2.bin", $true)
 }
 ```
-
-<b>start2.bin file location:</b>
-
-* %LOCALAPPDATA%\Packages\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\LocalState\
-
 
 # Related videos
 
