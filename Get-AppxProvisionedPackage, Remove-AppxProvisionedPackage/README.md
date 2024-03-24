@@ -5,11 +5,9 @@
 * [Get-AppxProvisionedPackage](https://learn.microsoft.com/en-us/powershell/module/dism/get-appxprovisionedpackage?view=windowsserver2022-ps)
 * [Remove-AppxProvisionedPackage](https://learn.microsoft.com/en-us/powershell/module/dism/remove-appxprovisionedpackage?view=windowsserver2022-ps)
 
-<b>Objectives:</b>
+<b>Notes:</b>
 
-* <b>Use powershell to:</b>
-   * List installed Windows store apps
-   * Remove Windows store apps for new users only(not relly.. it kinda works for existing users also)
+* This video is the same as [PowersShell: Get-AppxPackage, Remove-AppxPackage]()
 
 <b>List provisioning packages:</b>
 
@@ -142,5 +140,5 @@ Get-AppxProvisionedPackage -Online | ?{$_.DisplayName -notin $app_packages} | se
 
 # Related videos
 
-[Get-AppxPackage, Remove-AppxPackage]() <br />
-[Export-StartLayout, Import-StartLayout]()
+[PowersShell: Get-AppxPackage, Remove-AppxPackage]() <br />
+[PowersShell: Export-StartLayout, Import-StartLayout]()
