@@ -14,7 +14,7 @@
 <b>List provisioning packages:</b>
 
 ```powershell
-Get-AppxProvisionedPackage -online
+Get-AppxProvisionedPackage -Online
 ```
 
 <b>Get-AppxProvisionedPackage available properties:</b>
@@ -94,7 +94,7 @@ $app_packages =
 "Microsoft.Xbox.TCUI",
 "Microsoft.GamingApp"
 
-Get-AppxProvisionedPackage -online | ?{$_.DisplayName -in $app_packages} | Remove-AppxProvisionedPackage -Online -AllUser
+Get-AppxProvisionedPackage -Online | ?{$_.DisplayName -in $app_packages} | Remove-AppxProvisionedPackage -Online -AllUser
 ```
 
 <b>List appx packages that are not in the list</b>
@@ -135,7 +135,7 @@ $app_packages =
 "Microsoft.XboxGamingOverlay", # Don't recommended removing
 "Microsoft.Windows.Photos" # Don't recommended removing
 
-Get-AppxProvisionedPackage -online | ?{$_.DisplayName -notin $app_packages} | select DisplayName
+Get-AppxProvisionedPackage -Online | ?{$_.DisplayName -notin $app_packages} | select DisplayName
 ```
 
 
