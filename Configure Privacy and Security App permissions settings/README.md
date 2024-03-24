@@ -1,9 +1,5 @@
 # PowerShell: Configure Privacy and Security App permissions settings
 
-<b>Objective:</b>
-
-* Disable all App permissions
-
 <b>Notes:</b>
 
 * Disabling Web Cam and Microphone not recommended
