@@ -1,4 +1,4 @@
-# PowerShell: Get-InstalledLanguage, Install-Language, Set-SystemPreferredUILanguage
+# PowerShell: Get-InstalledLanguage, Install-Language, Get and Set-SystemPreferredUILanguage
 
 <b>Documentation:</b>
 
@@ -11,12 +11,20 @@
 * Check installed languages
 * Install French language
 
-# Show installed languages
+<b>List installed languages:</b>
+
 ```powershell
 Get-InstalledLanguage
 ```
 
-# Install language
+<b>Show System Preferred UI language:</b>
+
+```powershell
+Get-SystemPreferredUILanguage
+```
+
+<b>Install language:</b>
+
 ```powershell
 $install_language = @{
     Language       = "fr-FR"
@@ -28,12 +36,17 @@ Install-Language @install_language
 # Install language if needed
 ```powershell
 $language = "fr-FR"
-$language_installed = Get-InstalledLanguage $language
-if(!$language_installed){
-        $install_language = @{
-        Language       = $language
-        CopyToSettings = $true
+
+$current_preferred_ui_lanague = Get-SystemPreferredUILanguage
+
+if($language -ne $current_preferred_ui_lanague){
+    $language_installed = Get-InstalledLanguage $language
+    if(!$language_installed){
+            $install_language = @{
+            Language       = $language
+        }
+        Install-Language @install_language
     }
-    Install-Language @install_language
+    Set-SystemPreferredUILanguage $language
 }
 ```
