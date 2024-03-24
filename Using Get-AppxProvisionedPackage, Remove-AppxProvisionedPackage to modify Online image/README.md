@@ -7,7 +7,7 @@
 
 <b>Notes:</b>
 
-* This video is the same as [PowersShell: Get-AppxPackage, Remove-AppxPackage]()
+* This video is the same as [PowersShell: Get-AppxPackage, Remove-AppxPackage](https://youtu.be/SrjEV6rkoEQ)
 
 <b>List provisioning packages:</b>
 
@@ -136,9 +136,7 @@ $app_packages =
 Get-AppxProvisionedPackage -Online | ?{$_.DisplayName -notin $app_packages} | select DisplayName
 ```
 
-
-
 # Related videos
 
-[PowersShell: Get-AppxPackage, Remove-AppxPackage]() <br />
-[PowersShell: Export-StartLayout, Import-StartLayout]()
+[PowersShell: Get-AppxPackage, Remove-AppxPackage](https://youtu.be/SrjEV6rkoEQ) <br />
+[PowersShell: Export-StartLayout, Import-StartLayout](https://youtu.be/j-8FmXk8ssg)

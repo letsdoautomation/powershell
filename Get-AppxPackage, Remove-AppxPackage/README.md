@@ -140,5 +140,5 @@ Get-AppxPackage -AllUsers | ?{$_.name -notin $app_packages -and !$_.NonRemovable
 
 # Related videos
 
-[Export-StartLayout, Import-StartLayout]() <br />
-[Get-AppxProvisionedPackage, Remove-AppxProvisionedPackage]()
+[PowerShell: Export-StartLayout, Import-StartLayout](https://youtu.be/j-8FmXk8ssg) <br />
+[PowerShell: Using Get-AppxProvisionedPackage, Remove-AppxProvisionedPackage to modify Online image](https://youtu.be/SevFgIkzAKk)

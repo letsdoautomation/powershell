@@ -111,5 +111,5 @@ ls "C:\Users\" -Attributes Directory -Force | ?{$_.FullName -notin $env:USERPROF
 
 # Related videos
 
-[PowerShell: Get-AppxPackage, Remove-AppxPackage]() <br />
-[PowerShell: Get-AppxProvisionedPackage, Remove-AppxProvisionedPackage]()
+[PowerShell: Get-AppxPackage, Remove-AppxPackage](https://youtu.be/SrjEV6rkoEQ) <br />
+[PowerShell: Using Get-AppxProvisionedPackage, Remove-AppxProvisionedPackage to modify Online image](https://youtu.be/SevFgIkzAKk)
