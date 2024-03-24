@@ -1,9 +1,10 @@
-# PowerShell: Get-InstalledLanguage, Install-Language
+# PowerShell: Get-InstalledLanguage, Install-Language, Set-SystemPreferredUILanguage
 
 <b>Documentation:</b>
 
 * [Install-Language](https://learn.microsoft.com/en-us/powershell/module/languagepackmanagement/install-language?view=windowsserver2022-ps)
 * [Get-InstalledLanguage](https://learn.microsoft.com/en-us/powershell/module/languagepackmanagement/get-installedlanguage?view=windowsserver2022-ps)
+* [Set-SystemPreferredUILanguage](https://learn.microsoft.com/en-us/powershell/module/languagepackmanagement/set-systempreferreduilanguage?view=windowsserver2022-ps)
 
 <b>Use powershell to:</b>
 
