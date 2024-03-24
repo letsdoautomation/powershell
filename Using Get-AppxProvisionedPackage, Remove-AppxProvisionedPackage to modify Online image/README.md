@@ -1,4 +1,4 @@
-# PowerShell: Get-AppxProvisionedPackage, Remove-AppxProvisionedPackage
+# PowerShell: Using Get-AppxProvisionedPackage, Remove-AppxProvisionedPackage to modify Online image
 
 <b>Documentation:</b>
 
