@@ -71,7 +71,8 @@ foreach($setting in $settings){
   $setting.Group | %{
     if(!$_.Type){
       $registry.SetValue($_.name, $_.value)
-    }else{
+    }
+    else{
       $registry.SetValue($_.name, $_.value, $_.type)
     }
   }
