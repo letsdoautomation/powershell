@@ -1,5 +1,9 @@
 # PowerShell: Export-StartLayout, Import-StartLayout alternatives for Windows 11
 
+<b>Documentation:</b>
+
+* [Find the Application User Model ID of an installed app](https://learn.microsoft.com/en-us/windows/configuration/store/find-aumid?tabs=ps)
+
 <b>Objectives:</b>
 
 * <b>Method 1:</b> Modify start menu for <b>NEW</b> users by replicating Intune registry settings with powershell.
