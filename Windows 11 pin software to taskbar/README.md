@@ -33,6 +33,8 @@
 Get-AppxPackage | select @{n='name';e={"$($_.PackageFamilyName)!app"}} | ?{$_.name -like "**"}
 ```
 
+<b>Pin icons to taskbar with powershell:</b>
+
 ```powershell
 $taskbar_layout =
 @"
