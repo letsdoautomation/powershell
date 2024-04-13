@@ -2,8 +2,8 @@
 
 <b>Objectives:</b>
 
-* Move taskbar for current user
-* Move taskbar for all existing current users and new ones
+* Move taskbar icons for current user
+* Move taskbar icons for all existing current users and new ones
 
 <b>For single user:</b>
 
