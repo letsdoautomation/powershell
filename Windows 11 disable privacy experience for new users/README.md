@@ -4,6 +4,8 @@
 
 <img src="img/privacySettings.png" width=40% height=40%>
 
+<b>PowerShell snippet:</b>
+
 ```powershell
 $settings =
 [PSCustomObject]@{
