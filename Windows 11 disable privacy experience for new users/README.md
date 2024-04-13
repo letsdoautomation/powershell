@@ -1,5 +1,7 @@
 # PowerShell: Windows 11 disable privacy experience for new users
 
+<b>Privacy experience window:</b>
+
 <img src="img/privacySettings.png" width=40% height=40%>
 
 ```powershell
