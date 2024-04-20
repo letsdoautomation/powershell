@@ -66,6 +66,7 @@ Remove-AppxProvisionedPackage -PackageName "Microsoft.WindowsCalculator_2020.210
 #"Microsoft.GetHelp"
 #"Microsoft.Getstarted"
 #"Microsoft.WindowsStore"
+#"MicrosoftWindows.CrossDevice"
 
 $app_packages = 
 "Microsoft.WindowsCamera",
