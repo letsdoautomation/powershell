@@ -16,7 +16,7 @@ Get-Culture
 <b>Use Set-Culture to set regional settings to French:</b>
 
 ```powershell
-Set-Culture Fr-fr
+Set-Culture fr-FR
 ```
 
 <b>Copy settings to new users and welcome screen:</b>
