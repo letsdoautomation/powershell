@@ -50,3 +50,18 @@ if($language -ne $current_preferred_ui_lanague){
     Set-SystemPreferredUILanguage $language
 }
 ```
+
+### Related videos
+
+<b>Regional powershell commands:</b>
+
+[Get-Culture, Set-Culture]() <br />
+[Get-InstalledLanguage, Install-Language, Get and Set-SystemPreferredUILanguage]() <br />
+[Get-TimeZone, Set-TimeZone]() <br />
+[Get-WinHomeLocation, Set-WinHomeLocation]() <br />
+[Get-WinSystemLocale, Set-WinSystemLocale]() <br />
+[Get-WinUserLanguageList, Set-WinUserLanguageList]() <br />
+
+<b>Other powershell videos:</b>
+
+[PowerShell](https://www.youtube.com/playlist?list=PLVncjTDMNQ4RDyVzbV0_kpXCScTMgUw_A)
