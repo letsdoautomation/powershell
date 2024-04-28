@@ -6,33 +6,37 @@
 [Set-TimeZone](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-timezone?view=powershell-5.1)
 
 
-<b>Get currently set timezone:</b>
+<b>Get currently set time zone:</b>
 
 ```powershell
 Get-TimeZone
 ```
 
-<b>List availble timezones:</b>
+<b>List availble time zones:</b>
 
 ```powershell
 Get-TimeZone -ListAvailable
 ```
 
-<b>Get timezone by name:</b>
+<b>Get time zone by name:</b>
 
 ```powershell
 Get-TimeZone "*utc*"
 ```
 
-<b>Get timezone by DisplayName:</b>
+<b>Get time zone by DisplayName:</b>
 
 ```powershell
 Get-TimeZone -ListAvailable | ?{$_.DisplayName -like "*Paris*"}
 ```
 
+<b>Set time zone using Name parameter:</b>
+
 ```powershell
 Set-TimeZone "FLE Standard Time"
 ```
+
+<b>Set time zone using DisplayName parameter:</b>
 
 ```powershell
 Get-TimeZone -ListAvailable | ?{$_.DisplayName -like "*Paris*"} | Set-TimeZone
