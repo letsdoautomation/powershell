@@ -1,5 +1,10 @@
 # PowerShell: Windows 11 Configure regional settings
 
+<b>Documentation:</b>
+
+[Default input profiles (input locales) in Windows](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/default-input-locales-for-windows-language-packs?view=windows-11) <br />
+[Table of Geographical Locations](https://learn.microsoft.com/en-us/windows/win32/intl/table-of-geographical-locations?redirectedfrom=MSDN)
+
 <b>PowerShell snippet:</b>
 
 ```powershell
