@@ -55,12 +55,11 @@ if($language -ne $current_preferred_ui_lanague){
 
 <b>Regional powershell commands:</b>
 
-[Get-Culture, Set-Culture]() <br />
-[Get-InstalledLanguage, Install-Language, Get and Set-SystemPreferredUILanguage]() <br />
-[Get-TimeZone, Set-TimeZone]() <br />
-[Get-WinHomeLocation, Set-WinHomeLocation]() <br />
-[Get-WinSystemLocale, Set-WinSystemLocale]() <br />
-[Get-WinUserLanguageList, Set-WinUserLanguageList]() <br />
+[Get-Culture, Set-Culture](https://youtu.be/gS4BckaTKto) <br />
+[Get-TimeZone, Set-TimeZone](https://youtu.be/fmoIfJwvH-I) <br />
+[Get-WinHomeLocation, Set-WinHomeLocation](https://youtu.be/yWp_1L8YDoQ) <br />
+[Get-WinSystemLocale, Set-WinSystemLocale](https://youtu.be/rCGlh3hp1fI) <br />
+[Get-WinUserLanguageList, Set-WinUserLanguageList](https://youtu.be/Bhl-rLB8g28) <br />
 
 <b>Other powershell videos:</b>
 
