@@ -46,7 +46,7 @@ foreach($setting in $settings){
 }
 ```
 
-<b>PowerShell snippet with custom names for desktop item:s</b>
+<b>PowerShell snippet with custom names for desktop items:</b>
 
 ```powershell
 $apps =
