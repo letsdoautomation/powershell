@@ -29,7 +29,7 @@ Add-Type -AssemblyName Microsoft.VisualBasic
 
 $computer_name = [Microsoft.VisualBasic.Interaction]::InputBox("Enter new computer name:", "Configure computername")
 
-if($null -ne $computer_name){
+if(![string]::IsNullOrEmpty($computer_name)){
     Rename-Computer -NewName $computer_name
 }
 ```
