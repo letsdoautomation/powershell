@@ -11,74 +11,93 @@
 # Icons
 $desktop_icons =
 [pscustomobject]@{
-    Entry = "{20D04FE0-3AEA-1069-A2D8-08002B30309D}"
+    Path  = "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
+    Value = 0
+    Name = "{20D04FE0-3AEA-1069-A2D8-08002B30309D}"
     Description = "This PC"
 },
 [pscustomobject]@{
-    Entry = "{5399E694-6CE5-4D6C-8FCE-1D8870FDCBA0}"
+    Path  = "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
+    Value = 0
+    Name = "{5399E694-6CE5-4D6C-8FCE-1D8870FDCBA0}"
     Description = "Control Panel"
 },
 [pscustomobject]@{
-    Entry = "{59031a47-3f72-44a7-89c5-5595fe6b30ee}"
+    Path  = "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
+    Value = 0
+    Name = "{59031a47-3f72-44a7-89c5-5595fe6b30ee}"
     Description = "User's Files"
 },
 [pscustomobject]@{
-    Entry = "{645FF040-5081-101B-9F08-00AA002F954E}"
+    Path  = "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
+    Value = 0
+    Name = "{645FF040-5081-101B-9F08-00AA002F954E}"
     Description = "Recycle Bin"
 },
 [pscustomobject]@{
-    Entry = "{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}"
+    Path  = "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
+    Value = 0
+    Name = "{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}"
     Description = "Network"
+} | group Path
+
+foreach($setting in $desktop_icons){
+    $registry = [Microsoft.Win32.Registry]::CurrentUser.OpenSubKey($setting.Name, $true)
+    if ($null -eq $registry) {
+        $registry = [Microsoft.Win32.Registry]::CurrentUser.CreateSubKey($setting.Name, $true)
+    }
+    $setting.Group | %{
+        $registry.SetValue($_.name, $_.value)
+    }
+    $registry.Dispose()
 }
-
-# Enable icons for current user
-$key_path = "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
-$hkcu = [Microsoft.Win32.Registry]::CurrentUser.OpenSubKey($key_path, $true)
-
-$desktop_icons | %{
-    "Enabling '$($_.Description)' desktop icon" | Out-Host
-    $hkcu.SetValue($_.Entry, 0)
-}
-
-$hkcu.Dispose()
 ```
 
 <b>Enable desktop icons for all users:</b>
 
 ```powershell
-# Icons
 $desktop_icons =
 [pscustomobject]@{
-    Entry = "{20D04FE0-3AEA-1069-A2D8-08002B30309D}"
+    Path  = "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
+    Value = 0
+    Name = "{20D04FE0-3AEA-1069-A2D8-08002B30309D}"
     Description = "This PC"
 },
 [pscustomobject]@{
-    Entry = "{5399E694-6CE5-4D6C-8FCE-1D8870FDCBA0}"
+    Path  = "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
+    Value = 0
+    Name = "{5399E694-6CE5-4D6C-8FCE-1D8870FDCBA0}"
     Description = "Control Panel"
 },
 [pscustomobject]@{
-    Entry = "{59031a47-3f72-44a7-89c5-5595fe6b30ee}"
+    Path  = "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
+    Value = 0
+    Name = "{59031a47-3f72-44a7-89c5-5595fe6b30ee}"
     Description = "User's Files"
 },
 [pscustomobject]@{
-    Entry = "{645FF040-5081-101B-9F08-00AA002F954E}"
+    Path  = "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
+    Value = 0
+    Name = "{645FF040-5081-101B-9F08-00AA002F954E}"
     Description = "Recycle Bin"
 },
 [pscustomobject]@{
-    Entry = "{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}"
+    Path  = "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
+    Value = 0
+    Name = "{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}"
     Description = "Network"
+} | group Path
+
+foreach($setting in $desktop_icons){
+    $registry = [Microsoft.Win32.Registry]::CurrentUser.OpenSubKey($setting.Name, $true)
+    if ($null -eq $registry) {
+        $registry = [Microsoft.Win32.Registry]::CurrentUser.CreateSubKey($setting.Name, $true)
+    }
+    $setting.Group | %{
+        $registry.SetValue($_.name, $_.value)
+    }
+    $registry.Dispose()
 }
-
-# Enable icons for current user
-$key_path = "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
-$hkcu = [Microsoft.Win32.Registry]::CurrentUser.OpenSubKey($key_path, $true)
-
-$desktop_icons | %{
-    "Enabling '$($_.Description)' desktop icon" | Out-Host
-    $hkcu.SetValue($_.Entry, 0)
-}
-
-$hkcu.Dispose()
 
 # Export current users settings
 [System.IO.FileInfo]$destination = "$($env:ProgramData)\provisioning\Desktop_Icons.reg"
