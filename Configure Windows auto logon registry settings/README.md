@@ -5,6 +5,12 @@
 * [Turn on automatic logon in Windows](https://learn.microsoft.com/en-us/troubleshoot/windows-server/user-profiles-and-logon/turn-on-automatic-logon)
 * [Working with registry entries](https://learn.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries?view=powershell-5.1)
 
+<b>Objectives:</b>
+
+* Configure auto logon for local user
+* Configure auto logon for domain user
+* Remove auto logon registry settings
+
 <b>Notes:</b>
 
 * Auto logon user requires password
