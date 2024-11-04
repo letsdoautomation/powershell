@@ -1,4 +1,4 @@
-# PowerShell: Windows 11 stop Teams from running on startup
+# PowerShell: Stop Teams from running on startup in Windows 11
 
 <b>Request:</b>
 
