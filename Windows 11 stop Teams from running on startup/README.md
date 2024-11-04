@@ -4,6 +4,11 @@
 
 <img src="img/request.png" width=60% height=60%>
 
+<b>Notes:</b>
+
+* Works for Microsoft Teams(new)
+* Works only for users that have autorun enabled during script execution
+
 <b>Registry entry location:</b>
 
 ```batch
