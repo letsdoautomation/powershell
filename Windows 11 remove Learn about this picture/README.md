@@ -20,13 +20,13 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel]
 "{2cc5ca98-6485-489a-920e-b3e88a6ccce3}"=dword:00000001
-"@ | Out-File "$($provisioning.FullName)\DisableTeamsAutoStart.reg" -Encoding unicode
+"@ | Out-File "$($provisioning.FullName)\RemoveLearnAboutPicture.reg" -Encoding unicode
 
 $registry_settings =
-[PSCustomObject]@{ # Import DisableTeamsAutoStart using ActiveSetup
+[PSCustomObject]@{ # Import RemoveLearnAboutPicture using ActiveSetup
     Path  = "SOFTWARE\Microsoft\Active Setup\Installed Components\ImportUserRegistry"
     Name  = "StubPath"
-    Value = 'REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" /v ImportUserRegistry /d "REG IMPORT {0}" /f' -f "$($provisioning.FullName)\DisableTeamsAutoStart.reg"
+    Value = 'REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" /v ImportUserRegistry /d "REG IMPORT {0}" /f' -f "$($provisioning.FullName)\RemoveLearnAboutPicture.reg"
 }
 
 foreach ($setting in ($registry_settings | group Path)) {
