@@ -3,20 +3,32 @@
 <b>Remove "Learn about this picture" for single user:</b>
 
 ```powershell
-ri 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{2cc5ca98-6485-489a-920e-b3e88a6ccce3}'
+New-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" -Name "{2cc5ca98-6485-489a-920e-b3e88a6ccce3}" -value 1 -ea SilentlyContinue
 ```
 
 <b>Remove "Learn about this picture" for all users:</b>
 
 ```powershell
-$registry_settings = 
-[PSCustomObject]@{
-    Path  = "SOFTWARE\Microsoft\Active Setup\Installed Components\RemoveLearnAboutPicture"
-    Value = "REG ADD `"HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce`" /v RemoveLearnAboutPicture /d `"REG DELETE HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{2cc5ca98-6485-489a-920e-b3e88a6ccce3} /f`" /f"
-    Name  = "StubPath"
+[System.IO.DirectoryInfo]$provisioning = "$($env:ProgramData)\provisioning"
+
+if (!$provisioning.Exists) {
+    $provisioning.Create()
 }
 
-# Apply registry settings
+@"
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel]
+"{2cc5ca98-6485-489a-920e-b3e88a6ccce3}"=dword:00000001
+"@ | Out-File "$($provisioning.FullName)\DisableTeamsAutoStart.reg" -Encoding unicode
+
+$registry_settings =
+[PSCustomObject]@{ # Import DisableTeamsAutoStart using ActiveSetup
+    Path  = "SOFTWARE\Microsoft\Active Setup\Installed Components\ImportUserRegistry"
+    Name  = "StubPath"
+    Value = 'REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" /v ImportUserRegistry /d "REG IMPORT {0}" /f' -f "$($provisioning.FullName)\DisableTeamsAutoStart.reg"
+}
+
 foreach ($setting in ($registry_settings | group Path)) {
     $registry = [Microsoft.Win32.Registry]::LocalMachine.OpenSubKey($setting.Name, $true)
     if ($null -eq $registry) {
