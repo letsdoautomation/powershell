@@ -1,4 +1,4 @@
-# PowerShell: Windows 11 disable Learn about this picture
+# PowerShell: Windows 11 remove Learn about this picture
 
 <b>Remove "Learn about this picture" for single user:</b>
 
