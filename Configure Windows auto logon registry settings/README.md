@@ -26,7 +26,7 @@ $auto_logon_settings =
 },
 [PSCustomObject]@{ # Configure username
     Name  = "DefaultUserName"
-    Value = "local_user"
+    Value = "admin"
 },
 [PSCustomObject]@{ # Configure password
     Name  = "DefaultPassword"
@@ -53,7 +53,7 @@ $auto_logon_settings =
 },
 [PSCustomObject]@{ # Configure username
     Name  = "DefaultUserName"
-    Value = "domain_user"
+    Value = "john"
 },
 [PSCustomObject]@{ # Configure password
     Name  = "DefaultPassword"
