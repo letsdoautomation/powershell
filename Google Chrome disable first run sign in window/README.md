@@ -26,7 +26,7 @@ foreach($setting in $settings){
 }
 ```
 
-<b>"Sign in to Chrome" screen:</b>
+<b>"AD Privacy" screen:</b>
 
 <img src="img/privacysandbox.png" width=40% height=40%>
 
