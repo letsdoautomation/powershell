@@ -1,4 +1,4 @@
-# PowerShell: Google Chrome disable first run sigh in window
+# PowerShell: Google Chrome disable first run sign in window
 
 <b>"Sign in to Chrome" screen:</b>
 
