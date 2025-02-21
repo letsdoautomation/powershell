@@ -11,7 +11,7 @@ $settings =
 [PSCustomObject]@{
     Path  = "SOFTWARE\Policies\Google\Chrome"
     Value = 0
-    Name  = "PromotionalTabsEnabled"
+    Name  = "PromotionsEnabled"
 } | group Path
 
 foreach($setting in $settings){
@@ -37,7 +37,7 @@ $settings =
 [PSCustomObject]@{
     Path  = "SOFTWARE\Policies\Google\Chrome"
     Value = 0
-    Name  = "PromotionalTabsEnabled"
+    Name  = "PromotionsEnabled"
 },
 [PSCustomObject]@{
     Path  = "SOFTWARE\Policies\Google\Chrome"
