@@ -72,6 +72,42 @@ foreach($setting in $settings){
 }
 ```
 
+```powershell
+$settings = 
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Policies\Google\Chrome"
+    Name  = "PromotionsEnabled"
+},
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Policies\Google\Chrome"
+    Name  = "PrivacySandboxPromptEnabled"
+},
+[PSCustomObject]@{ 
+    Path  = "SOFTWARE\Policies\Google\Chrome"
+    Name  = "PrivacySandboxAdMeasurementEnabled"
+},
+[PSCustomObject]@{ 
+    Path  = "SOFTWARE\Policies\Google\Chrome"
+    Name  = "PrivacySandboxAdTopicsEnabled"
+},
+[PSCustomObject]@{ 
+    Path  = "SOFTWARE\Policies\Google\Chrome"
+    Name  = "PrivacySandboxSiteEnabledAdsEnabled"
+} | group Path
+
+foreach($setting in $settings){
+    $registry = [Microsoft.Win32.Registry]::LocalMachine.OpenSubKey($setting.Name, $true)
+    if ($null -eq $registry) {
+        continue
+    }
+
+    foreach($item in $setting.Group.Where({$null -ne $registry.GetValue($_.name)})){
+        $registry.DeleteValue($item.name, $true)
+    }
+    $registry.Dispose()
+}
+```
+
 ## Related videos
 
 <b>Other powershell videos</b>
