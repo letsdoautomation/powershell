@@ -71,6 +71,7 @@ foreach($setting in $settings){
     $registry.Dispose()
 }
 ```
+<b>Remove "ad privacy features and startup sign in screen" registry settings:</b>
 
 ```powershell
 $settings = 
