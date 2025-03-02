@@ -30,5 +30,5 @@ foreach($setting in $settings){
 
 <b>Other powershell videos</b>
 
-[PowerShell playlist](https://www.youtube.com/playlist?list=PLVncjTDMNQ4RDyVzbV0_kpXCScTMgUw_A)
+[PowerShell playlist](https://www.youtube.com/playlist?list=PLVncjTDMNQ4RDyVzbV0_kpXCScTMgUw_A) <br />
 [Google Chrome playlist](https://www.youtube.com/playlist?list=PLVncjTDMNQ4TOfhZyNOqTyrpRS6HXFqjW)
