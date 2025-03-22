@@ -1,4 +1,4 @@
-# PowerShell: Pause Windows updates
+# PowerShell: Pause Windows 11 updates
 
 <b>Update settings location in registry:</b>
 
