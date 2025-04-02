@@ -17,40 +17,56 @@ $date = Get-Date
 $pause_start = $date.ToUniversalTime().ToString( "yyyy-MM-ddTHH:mm:ssZ" )
 $pause_end = $date.AddDays($pause_for_days).ToUniversalTime().ToString( "yyyy-MM-ddTHH:mm:ssZ" )
 
-$settings = 
-foreach ($item in 'PauseFeatureUpdatesEndTime', 'PauseQualityUpdatesEndTime', 'PauseUpdatesExpiryTime') {
-    [PSCustomObject]@{
-        Path  = "SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
-        Name  = $item
-        Value = $pause_end
-    }
-}
-
-$settings += 
-foreach ($item in 'PauseFeatureUpdatesStartTime', 'PauseQualityUpdatesStartTime', 'PauseUpdatesStartTime') {
-    [PSCustomObject]@{
-        Path  = "SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
-        Name  = $item
-        Value = $pause_start
-    }
-}
-
-$settings +=
-foreach ($item in 'PausedFeatureDate', 'PausedQualityDate') {
-    [PSCustomObject]@{
-        Path  = "SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\Settings"
-        Name  = $item
-        Value = $pause_start
-    }
-}
-
-$settings +=
-foreach ($item in 'PausedFeatureStatus', 'PausedQualityStatus') {
-    [PSCustomObject]@{
-        Path  = "SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\Settings"
-        Name  = $item
-        Value = 1
-    }
+$settings =
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
+    Name  = "PauseFeatureUpdatesEndTime"
+    Value = $pause_end
+},
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
+    Name  = "PauseQualityUpdatesEndTime"
+    Value = $pause_end
+},
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
+    Name  = "PauseUpdatesExpiryTime"
+    Value = $pause_end
+},
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
+    Name  = "PauseFeatureUpdatesStartTime"
+    Value = $pause_start
+},
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
+    Name  = "PauseQualityUpdatesStartTime"
+    Value = $pause_start
+},
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
+    Name  = "PauseUpdatesStartTime"
+    Value = $pause_start
+},
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\Settings"
+    Name  = "PausedFeatureDate"
+    Value = $pause_start
+},
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\Settings"
+    Name  = "PausedQualityDate"
+    Value = $pause_start
+},
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\Settings"
+    Name  = "PausedFeatureStatus"
+    Value = 1
+},
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Microsoft\WindowsUpdate\UpdatePolicy\Settings"
+    Name  = "PausedQualityStatus"
+    Value = 1
 }
 
 foreach ($setting in ($settings | group Path)) {
