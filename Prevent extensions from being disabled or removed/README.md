@@ -1,6 +1,6 @@
 # PowerShell: Prevent extensions from being disabled or removed
 
-</b>PowerShell snippet:</b>
+</b>PowerShell snippet for locking extension:</b>
 
 ```powershell
 $settings =
@@ -19,5 +19,20 @@ foreach($setting in $settings){
         $registry.SetValue($_.name, $_.value)
     }
     $registry.Dispose()
+}
+```
+
+</b>PowerShell snippet for finding guid:</b>
+
+```powershell
+$extension = "Block Site"
+$result = irm "https://addons.mozilla.org/api/v5/addons/search/?q=$($extension)"
+
+foreach($item in $result.results){
+    [PSCustomObject]@{
+        name = $item.name.'en-us'
+        guid = $item.guid
+        url  = $item.url
+    }
 }
 ```
