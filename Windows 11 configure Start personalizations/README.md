@@ -1,6 +1,6 @@
 # PowerShell: Windows 11 configure Start personalizations
 
-<b>Objective:</b>
+<b>Objectives:</b>
 
 <img src="img/objective.png" width=50% height=50%>
 
@@ -147,3 +147,6 @@ foreach ($setting in ($settings | group Path)) {
 }
 ```
 
+# More PowerShell snippet videos:
+
+[PowerShell](https://www.youtube.com/playlist?list=PLVncjTDMNQ4RDyVzbV0_kpXCScTMgUw_A)

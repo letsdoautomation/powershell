@@ -1,8 +1,11 @@
 # PowerShell: Windows 11 configure Start layout more pins
 
-<b>Objective:</b>
+<b>Objectives:</b>
 
 <img src="img/objective.png" width=50% height=50%>
+
+* Configure for current user
+* Configure for all users
 
 <b>Set more pins for current user:</b>
 
@@ -70,3 +73,7 @@ foreach ($setting in ($settings | group Path)) {
     $registry.Dispose()
 }
 ```
+
+# More PowerShell snippet videos:
+
+[PowerShell](https://www.youtube.com/playlist?list=PLVncjTDMNQ4RDyVzbV0_kpXCScTMgUw_A)
