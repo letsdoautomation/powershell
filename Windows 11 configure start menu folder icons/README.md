@@ -90,8 +90,8 @@ $settings =
 },
 [PSCustomObject]@{ # Start enable network
     Path  = "SOFTWARE\Microsoft\PolicyManager\current\device\Start"
-    Value = 1
     Name  = "AllowPinnedFolderNetwork"
+    Value = 1
 },
 [PSCustomObject]@{ # Start enable network
     Path  = "SOFTWARE\Microsoft\PolicyManager\current\device\Start"
