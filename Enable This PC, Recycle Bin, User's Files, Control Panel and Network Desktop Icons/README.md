@@ -106,6 +106,8 @@ if(!$destination.Directory.Exists){
     $destination.Directory.Create()
 }
 
+$key_path = "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
+
 $export = @{
     FilePath     = "reg"
     ArgumentList = "export" ,"HKCU\$($key_path)", $destination.FullName, "/y"
