@@ -1,7 +1,15 @@
 # PowerShell: Creating viewer requested script
 
-
 ```powershell
+$get_stuck_rects3_settings = @{
+    Path = "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StuckRects3"
+    Name = "Settings"
+}
+
+$stuck_rects3 = Get-ItemProperty @get_stuck_rects3_settings
+
+$stuck_rects3.settings[8] = 2
+
 [IO.DirectoryInfo]$provisioning = "$($env:PROGRAMDATA)\provisioning"
 
 if(!$provisioning.Exists){
@@ -14,14 +22,15 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "TaskbarAl"=dword:00000000
 "TaskbarGlomLevel"=dword:00000002
+"TaskbarBadges"=dword:00000000
+"TaskbarFlashing"=dword:00000000
+"TaskbarSn"=dword:00000000
+"TaskbarSd"=dword:00000000
 
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel]
-"{20D04FE0-3AEA-1069-A2D8-08002B30309D}"=dword:00000000
-"{5399E694-6CE5-4D6C-8FCE-1D8870FDCBA0}"=dword:00000000
-"{59031a47-3f72-44a7-89c5-5595fe6b30ee}"=dword:00000000
-"{645FF040-5081-101B-9F08-00AA002F954E}"=dword:00000000
-"{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}"=dword:00000000
-"@ | Out-File "$($provisioning.FullName)\user-settings.reg" -Encoding unicode -Force
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StuckRects3]
+"Settings"=hex:{0}
+  
+"@ -f (($stuck_rects3.settings | %{'{0:X2}' -f $_ }) -join ',') | Out-File "$($provisioning.FullName)\user-settings.reg" -Encoding unicode -Force
 
 $configure_active_setup = @{
     Path        = "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\UserSettings"
