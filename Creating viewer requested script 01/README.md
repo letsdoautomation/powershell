@@ -12,6 +12,7 @@
 * Create user-settings.reg registry file with taskbar configuration in C:\ProgramData\provisioning directory
 * Configure ActiveSetup to import user-settings.reg file for users that will sign-in to the computer
 
+<b>Snippet for modifying taskbar settings:</b>
 
 ```powershell
 $get_stuck_rects3_settings = @{
