@@ -1,4 +1,17 @@
-# PowerShell: Creating viewer requested script
+# PowerShell: Creating viewer requested script 01
+
+<b>Request:</b>
+
+<img src="img/request.png" width=50% height=50%>
+
+<b>Actions performed by powershell script:</b>
+
+* Get current registry entry value for "Automatically hide taskbar"
+  * Modify the bit that is responsible for "Automatically hide taskbar"
+* Create provisioning folder in C:\ProgramData\ directory
+* Create user-settings.reg registry file with taskbar configuration in C:\ProgramData\provisioning directory
+* Configure ActiveSetup to import user-settings.reg file for users that will sign-in to the computer
+
 
 ```powershell
 $get_stuck_rects3_settings = @{
@@ -44,3 +57,10 @@ $configure_runonce = @{
 
 ni @configure_active_setup | New-ItemProperty @configure_runonce
 ```
+
+## Related videos
+
+<b>Other powershell videos:</b>
+
+[PowerShell playlist](https://www.youtube.com/playlist?list=PLVncjTDMNQ4RDyVzbV0_kpXCScTMgUw_A)
+[Windows Registry](https://www.youtube.com/playlist?list=PLVncjTDMNQ4TZrwwuYuZBZhpjs6YWw7sQ)
