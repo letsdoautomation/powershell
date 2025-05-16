@@ -2,7 +2,7 @@
 
 <b>Request:</b>
 
-<img src="img/request.png" width=50% height=50%>
+<img src="img/request1.png" width=50% height=50%>
 
 <b>Snippet for configuring wallpaper settings:</b>
 
