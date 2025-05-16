@@ -1,5 +1,84 @@
+# PowerShell: Windows 11 configure wallpaper
+
+<b>Objectives:</b>
+
+* Configure wallpaper for single user
+* Configure wallpaper for all users
+  * Method that allows wallpaper to changed
+  * Method that doesn't allow wallpaper to changed
+
+<b>Configure wallpaper for single user:</b>
 
 ```powershell
+$settings =
+[PSCustomObject]@{
+    Path  = "Control Panel\Desktop"
+    Name  = "WallPaper"
+    Value = "C:\wallpaper.png"
+}
+
+foreach ($setting in ($settings | group Path)) {
+    $registry = [Microsoft.Win32.Registry]::CurrentUser.OpenSubKey($setting.Name, $true)
+    if ($null -eq $registry) {
+        $registry = [Microsoft.Win32.Registry]::CurrentUser.CreateSubKey($setting.Name, $true)
+    }
+    $setting.Group | % {
+        $registry.SetValue($_.name, $_.value)
+    }
+    $registry.Dispose()
+}
+```
+
+<b>Configure wallpaper for multiple users(cannot be changed in the ui):</b>
+
+```powershell
+$settings =
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP"
+    Name  = "DesktopImageStatus"
+    Value = 1
+},
+[PSCustomObject]@{
+    Path  = "SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP"
+    Name  = "DesktopImagePath"
+    Value = "C:\wallpaper.png"
+}
+
+foreach ($setting in ($settings | group Path)) {
+    $registry = [Microsoft.Win32.Registry]::LocalMachine.OpenSubKey($setting.Name, $true)
+    if ($null -eq $registry) {
+        $registry = [Microsoft.Win32.Registry]::LocalMachine.CreateSubKey($setting.Name, $true)
+    }
+    $setting.Group | % {
+        $registry.SetValue($_.name, $_.value)
+    }
+    $registry.Dispose()
+}
+```
+
+<b>Configure wallpaper for multiple users(can be changed in the ui):</b>
+
+```powershell
+# Configuration for single user
+$settings =
+[PSCustomObject]@{
+    Path  = "Control Panel\Desktop"
+    Name  = "WallPaper"
+    Value = "C:\wallpaper.png"
+}
+
+foreach ($setting in ($settings | group Path)) {
+    $registry = [Microsoft.Win32.Registry]::CurrentUser.OpenSubKey($setting.Name, $true)
+    if ($null -eq $registry) {
+        $registry = [Microsoft.Win32.Registry]::CurrentUser.CreateSubKey($setting.Name, $true)
+    }
+    $setting.Group | % {
+        $registry.SetValue($_.name, $_.value)
+    }
+    $registry.Dispose()
+}
+
+# Configuration for other users
 [IO.DirectoryInfo]$provisioning = "$($env:PROGRAMDATA)\provisioning"
 
 if(!$provisioning.Exists){
@@ -27,27 +106,9 @@ $configure_run_once = @{
 ni @configure_active_setup | New-ItemProperty @configure_run_once
 ```
 
-```powershell
-$settings =
-[PSCustomObject]@{
-    Path  = "SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP"
-    Name  = "DesktopImageStatus"
-    Value = 1
-},
-[PSCustomObject]@{
-    Path  = "SOFTWARE\Microsoft\Windows\CurrentVersion\PersonalizationCSP"
-    Name  = "DesktopImagePath"
-    Value = "C:\wallpaper.png"
-}
+## Related videos
 
-foreach ($setting in ($settings | group Path)) {
-    $registry = [Microsoft.Win32.Registry]::LocalMachine.OpenSubKey($setting.Name, $true)
-    if ($null -eq $registry) {
-        $registry = [Microsoft.Win32.Registry]::LocalMachine.CreateSubKey($setting.Name, $true)
-    }
-    $setting.Group | % {
-        $registry.SetValue($_.name, $_.value)
-    }
-    $registry.Dispose()
-}
-```
+<b>Other powershell videos:</b>
+
+* [PowerShell playlist](https://www.youtube.com/playlist?list=PLVncjTDMNQ4RDyVzbV0_kpXCScTMgUw_A)
+* [Windows Registry](https://www.youtube.com/playlist?list=PLVncjTDMNQ4TZrwwuYuZBZhpjs6YWw7sQ)
