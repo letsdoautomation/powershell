@@ -35,5 +35,6 @@ foreach ($setting in ($settings | group Path)) {
 
 <b>Other powershell videos:</b>
 
+* [Windows 11 configure wallpaper](https://youtu.be/DUsvqjA691Q)
 * [PowerShell playlist](https://www.youtube.com/playlist?list=PLVncjTDMNQ4RDyVzbV0_kpXCScTMgUw_A)
 * [Windows Registry](https://www.youtube.com/playlist?list=PLVncjTDMNQ4TZrwwuYuZBZhpjs6YWw7sQ)
